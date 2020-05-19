@@ -7,13 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- * @ClassName CompanyEntity
- * @Description TODO
- * @Author Liker
- * @Date 12/9/2019 6:58 PM
- * @Version 1.0
- **/
 @Entity
 @Table(name = "company")
 public class CompanyEntity extends AuditEntity {

@@ -6,13 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
-/**
- * @ClassName CompanyRepository
- * @Description TODO
- * @Author Liker
- * @Date 12/9/2019 7:03 PM
- * @Version 1.0
- **/
 public interface CompanyRepository extends JpaRepository<CompanyEntity, Integer> {
 
 	@Transactional

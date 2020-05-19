@@ -14,14 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @ClassName CompanyController
- * @Description TODO
- * @Author Liker
- * @Date 12/9/2019 6:55 PM
- * @Version 1.0
- **/
-
 @CrossOrigin
 @RestController
 @RequestMapping("/admin/manage/company")

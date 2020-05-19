@@ -1,10 +1,5 @@
 package com.fsd.utils;
 
-/**
- * @version 1.0
- * @Author Liker
- * @description 自定义响应码
- */
 public class ResponseCode {
 
 	protected ResponseCode() {

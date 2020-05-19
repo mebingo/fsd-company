@@ -1,7 +1,7 @@
 pipeline {
   agent none
   environment {
-    DOCKERHUBNAME = "liker163"
+    DOCKERHUBNAME = "ssn717"
   }
   stages {
     stage('maven Build') {
@@ -22,10 +22,10 @@ pipeline {
       agent any
       steps {
         script {
-          def REMOVE_FLAG_C = sh(returnStdout: true, script: "docker container ls -q --filter name=.*SMC-Company.*") != ""
+          def REMOVE_FLAG_C = sh(returnStdout: true, script: "docker container ls -q --filter name=.*FSD-Company.*") != ""
           echo "REMOVE_FLAG_C: ${REMOVE_FLAG_C}"
           if(REMOVE_FLAG_C){
-            sh 'docker container rm -f $(docker container ls -q --filter name=.*SMC-Company.*)'
+            sh 'docker container rm -f $(docker container ls -q --filter name=.*FSD-Company.*)'
           }
           def REMOVE_FLAG = sh(returnStdout: true, script: "docker image ls -q *${DOCKERHUBNAME}/company*") != ""
           echo "REMOVE_FLAG: ${REMOVE_FLAG}"
@@ -34,12 +34,12 @@ pipeline {
           }
         }
 
-        withCredentials([usernamePassword(credentialsId: 'liker163ID', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+        withCredentials([usernamePassword(credentialsId: 'ssn717ID', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           // sh 'docker login -u $USERNAME -p $PASSWORD'
           sh 'docker image build -t ${DOCKERHUBNAME}/company .'
           // sh 'docker push ${DOCKERHUBNAME}/company'
-          // sh 'docker run -d -p 8755:8755 --network smc-net --name smccompany ${DOCKERHUBNAME}/company'
-          sh 'docker run -d -p 8755:8755 --memory=600M --network smc-net --name SMC-Company ${DOCKERHUBNAME}/company'
+          // sh 'docker run -d -p 8755:8755 --network fsd-net --name fsdcompany ${DOCKERHUBNAME}/company'
+          sh 'docker run -d -p 8755:8755 --memory=600M --network fsd-net --name FSD-Company ${DOCKERHUBNAME}/company'
         }
       }
     }

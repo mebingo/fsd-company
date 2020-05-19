@@ -12,13 +12,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * @ClassName CompanyService
- * @Description TODO
- * @Author Liker
- * @Date 12/9/2019 7:02 PM
- * @Version 1.0
- **/
 @Service
 public class CompanyService {
 
